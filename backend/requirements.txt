@@ -1,0 +1,8 @@
+fastapi
+openai-agents
+pydantic-settings
+pypdf
+python-dotenv
+python-multipart
+supabase
+uvicorn
