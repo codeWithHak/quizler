@@ -63,7 +63,7 @@ export function FinalCTA() {
           AI-powered quiz generator for students who study smarter.
         </p>
         <p className="mt-4 text-xs text-[color:var(--ui-muted)]">
-          © 2025 Quizler. Built for backbenchers, by backbenchers.
+          © 2025 Quizler. Built for procrastinators, by procrastinators.
         </p>
       </div>
     </section>

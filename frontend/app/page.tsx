@@ -43,7 +43,7 @@ export default function Home() {
           <h1 className="text-balance text-[clamp(2.8rem,5.5vw,5.5rem)] font-black leading-[0.95] tracking-[-0.04em] text-[color:var(--ui-fg)]">
             Quiz Generator for
             <br />
-            <span className="text-[color:var(--ui-muted)]">Backbenchers</span>
+            <span className="text-[color:var(--ui-muted)]">Procrastinators</span>
           </h1>
 
           <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-[color:var(--ui-muted)] md:text-xl">
