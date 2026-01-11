@@ -112,10 +112,10 @@ export function PricingSection() {
                 <div className="mt-10">
                   <Button
                     asChild
-                    className={`h-12 w-full rounded-full text-base font-semibold ${
+                    className={`h-12 w-full rounded-full text-base font-semibold transition-all duration-300 ${
                       t.highlight
-                        ? "bg-[color:var(--ui-accent)] text-[color:var(--ui-accent-contrast)] hover:opacity-90"
-                        : "border border-[color:var(--ui-border)] bg-[color:var(--ui-panel)] text-[color:var(--ui-fg)] hover:bg-[color:var(--ui-hover)]"
+                        ? "bg-[color:var(--ui-accent)] text-[color:var(--ui-accent-contrast)] hover:scale-[1.02] hover:shadow-lg hover:shadow-white/10"
+                        : "border border-[color:var(--ui-border)] bg-transparent text-[color:var(--ui-fg)] hover:border-[color:var(--ui-fg)]/50 hover:bg-white/5"
                     }`}
                   >
                     <Link href={t.href}>{t.cta}</Link>

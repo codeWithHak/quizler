@@ -28,13 +28,13 @@ export function FinalCTA() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
-            <Button asChild className="group h-14 rounded-full bg-[color:var(--ui-accent)] px-10 text-lg font-semibold text-[color:var(--ui-accent-contrast)] hover:opacity-90">
+            <Button asChild className="group h-14 rounded-full bg-[color:var(--ui-accent)] px-10 text-lg font-semibold text-[color:var(--ui-accent-contrast)] transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-white/10">
               <Link href="/pdf-to-quiz" className="flex items-center gap-2">
                 Generate Your First Quiz
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild variant="ghost" className="h-14 rounded-full border border-[color:var(--ui-border)] bg-[color:var(--ui-panel)] px-10 text-lg font-semibold text-[color:var(--ui-fg)] hover:bg-[color:var(--ui-hover)]">
+            <Button asChild variant="ghost" className="h-14 rounded-full border border-[color:var(--ui-border)] bg-transparent px-10 text-lg font-semibold text-[color:var(--ui-fg)] transition-all duration-300 hover:border-[color:var(--ui-fg)]/50 hover:bg-white/5">
               <Link href="/text-to-quiz">Or Paste Text</Link>
             </Button>
           </div>
