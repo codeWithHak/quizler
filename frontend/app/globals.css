@@ -8,8 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-inter);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,7 +47,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.85rem;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -78,6 +79,22 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  /* UI theme tokens (dark modern aesthetic) */
+  --ui-fg: rgba(255, 255, 255, 0.92);
+  --ui-muted: rgba(255, 255, 255, 0.55);
+  --ui-panel: rgba(255, 255, 255, 0.03);
+  --ui-hover: rgba(255, 255, 255, 0.06);
+  --ui-border: rgba(255, 255, 255, 0.10);
+  --ui-accent: #ffffff;
+  --ui-accent-contrast: #000000;
+
+  /* Landing background tokens */
+  --landing-bg: linear-gradient(180deg, #0a0a0a 0%, #000000 60%, #000000 100%);
+  --landing-spot: radial-gradient(circle at 25% 15%, rgba(255,255,255,0.08), transparent 42%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.05), transparent 40%), radial-gradient(circle at 60% 85%, rgba(255,255,255,0.04), transparent 46%);
+  --landing-grid: linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  --landing-grid-size: 72px 72px;
+  --landing-grid-opacity: 0.04;
 }
 
 .dark {
@@ -114,12 +131,52 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Theme utility classes */
+.theme-ui {
+  color: var(--ui-fg);
+}
+
+.theme-panel {
+  background: var(--ui-panel);
+  border-color: var(--ui-border);
+}
+
+.theme-muted {
+  color: var(--ui-muted);
+}
+
+.theme-border {
+  border-color: var(--ui-border);
+}
+
+.theme-hover {
+  background: var(--ui-hover);
+}
+
+.theme-accent {
+  background: var(--ui-accent);
+  color: var(--ui-accent-contrast);
+}
+
+.theme-accent-outline {
+  border-color: var(--ui-border);
+  background: var(--ui-panel);
+  color: var(--ui-fg);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans, var(--font-manrope));
+  }
+}
+
+@layer base {
+  h1, h2, h3 {
+    font-family: var(--font-display, var(--font-inter));
   }
 }
 
@@ -127,12 +184,25 @@
   .glass {
     @apply bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg;
   }
-  
+
   .glass-card {
     @apply bg-white/50 dark:bg-white/5 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400;
+  }
+
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,0.05), transparent 35%),
+      radial-gradient(circle at 80% 0%, rgba(255,255,255,0.06), transparent 40%),
+      radial-gradient(circle at 60% 90%, rgba(255,255,255,0.04), transparent 45%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 3px);
   }
 }
